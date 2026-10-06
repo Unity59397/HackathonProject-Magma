@@ -7,13 +7,18 @@
 int main() {
 
     Graph graph;
-
+    
     graph.addEdge("Law", "Parliament");
     graph.addEdge("Law", "Courts");
+    graph.addEdge("Courts", "Parliament");
 
-    //Call displaying functions so I can see wtf is going on. Thank you.
-    graph.displayNodes();
-    graph.displayEdges();
+    graph.removeEdge("Law", "Courts");
+    graph.displayGraph();                 // Law->Parliament, Courts->Parliament remain
+
+    graph.removeNode("Parliament");
+    graph.displayGraph();                 // both edges gone, Parliament not listed
+
+    graph.removeNode("Banana");           // should return false, not crash
 
     return 0;
 }

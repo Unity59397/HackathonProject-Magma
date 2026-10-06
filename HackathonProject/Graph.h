@@ -17,11 +17,11 @@ private:
 public:
     // Nodes
     bool addNode(const std::string& name);
-    void removeNode(std::string name);
+    bool removeNode(const std::string& name);
 
     // Edges
     void addEdge(const std::string& from,const std::string& to);
-    bool removeEdge(std::string& from, std::string& to);    
+    bool removeEdge(const std::string& from, const std::string& to);    
 
     // Display
     void displayNodes() const;

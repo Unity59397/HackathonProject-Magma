@@ -55,3 +55,39 @@ bool Graph::hasEdge(const std::string& from, const std::string& to) const {
     }
     return false;
 }
+
+bool Graph::removeNode(const std::string& name) {
+    // Remove edges first
+    edges.erase(std::remove_if(edges.begin(), edges.end(), [&](const Edge& edge) {
+        return edge.getFrom() == name || edge.getTo() == name;
+    }), edges.end());
+
+    // Now remove the node
+    auto it = std::remove_if(nodes.begin(), nodes.end(), [&](const Node& node) {
+        return node.getName() == name;
+    });
+
+    if (it != nodes.end()) {
+        nodes.erase(it, nodes.end());
+        return true;
+    }
+
+    return false;
+}
+
+bool Graph::removeEdge(const std::string& from, const std::string& to) {
+    for(auto it = edges.begin(); it != edges.end(); ++it) {
+        if(it->getFrom() == from && it->getTo() == to) {
+            edges.erase(it);
+            return true;
+        }
+    }
+    return false;
+}
+
+void Graph::displayGraph() const {
+    std::cout << "Nodes:" << std::endl;
+    displayNodes();
+    std::cout << "Edges:" << std::endl;
+    displayEdges();
+}
