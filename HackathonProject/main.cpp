@@ -8,17 +8,7 @@ int main() {
 
     Graph graph;
     
-    graph.addEdge("Law", "Parliament");
-    graph.addEdge("Law", "Courts");
-    graph.addEdge("Courts", "Parliament");
-
-    graph.removeEdge("Law", "Courts");
-    graph.displayGraph();                 // Law->Parliament, Courts->Parliament remain
-
-    graph.removeNode("Parliament");
-    graph.displayGraph();                 // both edges gone, Parliament not listed
-
-    graph.removeNode("Banana");           // should return false, not crash
-
+    auto links = extractLinks("[[]] [[A]] and [[B|shown]] and [[|x]] and [[Note|]] end");
+    for (const auto& l : links) std::cout << l << "\n";
     return 0;
 }
