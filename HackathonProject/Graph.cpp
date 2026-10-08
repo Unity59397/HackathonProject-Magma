@@ -85,6 +85,8 @@ bool Graph::removeEdge(const std::string& from, const std::string& to) {
     return false;
 }
 
+
+//Another function to display the whole graph.
 void Graph::displayGraph() const {
     std::cout << "Nodes:" << std::endl;
     displayNodes();
