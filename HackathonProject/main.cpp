@@ -1,16 +1,27 @@
 #include <iostream>
 #include <string>
-#include <cctype>
-#include <vector>
+#include <exception>
+
 #include "Graph.h"
-#include "LinkParser.h"
+#include "NoteLoader.h"
+#include "GraphJson.h"
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <notes_folder>" << std::endl;
+        return 1;
+    }
 
-    Graph graph;
-    
-    auto links = extractLinks("[[]] [[A]] and [[B|shown]] and [[|x]] and [[Note|]] end");
-    for (const auto& l : links) std::cout << l << "\n";
+    std::string folder = argv[1];
+
+    try {
+        Graph graph = buildGraphFromFolder(folder);
+        std::cout << toJson(graph) << std::endl;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

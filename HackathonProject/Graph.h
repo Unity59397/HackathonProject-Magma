@@ -15,6 +15,8 @@ private:
     bool hasEdge(const std::string& from, const std::string& to) const;
 
 public:
+    const std::vector<Node>& getNodes() const;
+    const std::vector<Edge>& getEdges() const;
     // Nodes
     bool addNode(const std::string& name);
     bool removeNode(const std::string& name);

@@ -30,6 +30,12 @@
     <ClCompile Include="LinkParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NoteLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphJson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h">
@@ -44,5 +50,18 @@
     <ClInclude Include="LinkParser.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="NoteLoader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\json.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphJson.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore" />
   </ItemGroup>
 </Project>

@@ -141,15 +141,24 @@
   <ItemGroup>
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphJson.cpp" />
     <ClCompile Include="LinkParser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NoteLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\json.hpp" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphJson.h" />
     <ClInclude Include="LinkParser.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NoteLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".dockerignore" />
+    <None Include="Dockerfile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

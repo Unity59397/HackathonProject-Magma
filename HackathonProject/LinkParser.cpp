@@ -28,3 +28,4 @@ std::vector<std::string> extractLinks(const std::string& markdown) {
     }
     return links;
 }
+

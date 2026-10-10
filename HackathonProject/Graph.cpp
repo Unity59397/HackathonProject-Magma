@@ -18,13 +18,8 @@ void Graph::addEdge(const std::string &from, const std::string &to) {
     if (hasEdge(from, to)) {
         return;
     }
-
-    if (addNode(from)) {
-        std::cout << "Created node: " << from << std::endl;
-    }
-    if (addNode(to)) {
-        std::cout << "Created node: " << to << std::endl;
-    }
+    addNode(from);
+    addNode(to);
     edges.emplace_back(from, to);
 }
 
@@ -92,4 +87,12 @@ void Graph::displayGraph() const {
     displayNodes();
     std::cout << "Edges:" << std::endl;
     displayEdges();
+}
+
+const std::vector<Node>& Graph::getNodes() const {
+    return nodes;
+}
+
+const std::vector<Edge>& Graph::getEdges() const {
+    return edges;
 }
